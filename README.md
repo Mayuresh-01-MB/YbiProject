@@ -132,7 +132,7 @@ The machine learning model was trained and evaluated using appropriate performan
 
 **Domain:** Data Science & Machine Learning
 
-This project was completed as part of the internship program to gain hands-on experience in real-world machine learning applications. :contentReference[oaicite:0]{index=0}
+This project was completed as part of the internship program to gain hands-on experience in real-world machine learning applications. 
 
 ---
 
