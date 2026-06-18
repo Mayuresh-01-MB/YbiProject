@@ -150,10 +150,6 @@ This project was completed as part of the internship program to gain hands-on ex
 ### Mayuresh Bhandari
 
 - GitHub: https://github.com/Mayuresh-01-MB
-- LinkedIn: Add your LinkedIn profile link here
+
 
 ---
-
-## License
-
-This project is intended for educational and learning purposes.
