@@ -1,1 +1,15 @@
+# Problem Statement 5: Content-Based Movie Recommendation System
 
+## Objective
+Build and deploy a content-based recommendation system that suggests the most relevant movies based on user preferences and textual metadata similarities.
+
+## Domain
+Data Science, Natural Language Processing (NLP), and Machine Learning.
+
+## Key Requirements
+1. Ingest and preprocess movie metadata (genres, keywords, taglines, directors, cast, and overview synopses).
+2. Clean text, handle missing values, and construct combined feature representations.
+3. Apply Term Frequency-Inverse Document Frequency (TF-IDF) vectorization to capture word importance.
+4. Calculate pairwise Cosine Similarity scores between movies.
+5. Provide fuzzy title matching to handle user typos and partial title inputs.
+6. Return ranked movie recommendations with match confidence and rich metadata.

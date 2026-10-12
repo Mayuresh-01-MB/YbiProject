@@ -1,155 +1,179 @@
-# YBI Foundation Machine Learning Project
+# 🎬⚡ CineMatch 3D | Movie & TV Series Recommendation System
 
-## Overview
+[![Python](https://img.shields.io/badge/Python-3.9%2B-blue.svg)](https://www.python.org/)
+[![Scikit-Learn](https://img.shields.io/badge/scikit--learn-1.3%2B-orange.svg)](https://scikit-learn.org/)
+[![Streamlit](https://img.shields.io/badge/Streamlit-1.30%2B-red.svg)](https://streamlit.io/)
+[![Pytest](https://img.shields.io/badge/pytest-Passing-brightgreen.svg)](https://pytest.org/)
 
-This project was developed as part of the YBI Foundation Data Science & Machine Learning Internship. The objective of the project is to apply machine learning techniques to analyze data, build predictive models, and generate meaningful insights.
+An end-to-end, content-based **Movie & TV Series Recommendation System** developed as part of the **YBI Foundation Data Science & Machine Learning Internship (Problem Statement 5)**.
 
-The project demonstrates the complete machine learning workflow, including data preprocessing, exploratory data analysis, model training, evaluation, and prediction.
-
----
-
-## Project Objectives
-
-- Understand and analyze the dataset.
-- Perform data cleaning and preprocessing.
-- Conduct exploratory data analysis (EDA).
-- Build machine learning models.
-- Evaluate model performance.
-- Generate predictions and insights.
+The system analyzes movie and television series metadata across **6,680+ titles (4,760 Movies + 1,926 TV Shows)**, computes semantic text representations using **TF-IDF Vectorization**, and generates personalized recommendations via **Cosine Similarity** with separate dedicated dimensions for Movies and Series, futuristic 3D cyberpunk graphics, and tactile sorting controls.
 
 ---
 
-## Technologies Used
+## 🌟 Key Features
 
-- Python
-- Jupyter Notebook / Google Colab
-- Pandas
-- NumPy
-- Matplotlib
-- Seaborn
-- Scikit-learn
-
----
-
-## Project Workflow
-
-### 1. Data Collection
-- Imported dataset for analysis and prediction.
-
-### 2. Data Preprocessing
-- Handling missing values
-- Data cleaning
-- Feature selection
-- Data transformation
-
-### 3. Exploratory Data Analysis (EDA)
-- Statistical analysis
-- Data visualization
-- Pattern identification
-
-### 4. Model Development
-- Data splitting (Training & Testing)
-- Machine Learning Model Training
-- Hyperparameter tuning (if applicable)
-
-### 5. Model Evaluation
-- Accuracy Score
-- Confusion Matrix
-- Precision
-- Recall
-- F1 Score
-
-### 6. Prediction
-- Generated predictions using the trained model.
+- **Dual Dimension Architecture**: Separate dedicated realms for **🎬 Movies (4,760 films)** and **📺 TV Series (1,926 shows)**.
+- **Content-Based Semantic Filtering**: Evaluates *Genres*, *Keywords*, *Directors/Creators*, *Cast*, and *Storyline Synopsis*.
+- **High-to-Low / Low-to-High Star Sorting**: Instant dynamic sorting by Star Rating, Best Semantic Match, Popularity/Votes, and Release Year.
+- **Futuristic 3D Cyber HUD Interface**: Neon holographic aesthetics, 3D tactile push buttons, glowing border reflections, and dark-glassmorphic styling.
+- **Smart Toggle Switches**: Real-time neural calibrations for Semantic Plot Matching, Anti-Self Safeguard, and Elite 8.0+ filters.
+- **Robust Fuzzy Matching & Fallback**: Case-insensitive fuzzy search handling typos and partial queries with trending fallbacks.
+- **Self-Match Exclusion**: Filters out the input title so users receive 100% new recommendations.
+- **Interactive Holographic Watchlist**: Bookmark movies and TV shows into a session-persistent HUD watchlist.
+- **10 Comprehensive Automated Tests**: Full test coverage across data ingestion, recommendation accuracy, sorting, and edge cases.
 
 ---
 
-## Repository Structure
+## 📁 Repository Structure
 
 ```text
 YbiProject/
 │
-├── YbiFoundation.ipynb
-├── README.md
-└── dataset/
+├── .gitignore                      # Git ignore rules for Python, Jupyter, and caches
+├── README.md                       # Comprehensive project documentation
+├── requirements.txt                # Production and development dependencies
+├── PS-5                            # Problem Statement 5 specification
+│
+├── dataset/                        # Dataset directory (cached locally)
+│   ├── Movies_Recommendation.csv   # 4,760 TMDB Movies dataset
+│   └── TV_Shows_Recommendation.csv # 1,926 IMDb TV Series dataset
+│
+├── src/                            # Modular Recommendation Engines
+│   ├── __init__.py                 # Package initializer
+│   ├── config.py                   # Configuration, feature lists, and thresholds
+│   ├── data_loader.py              # Local loading with remote GitHub fallback
+│   ├── preprocessor.py             # Feature combination & TF-IDF vectorizer
+│   ├── recommender.py              # Core MovieRecommender engine
+│   └── series_recommender.py       # Core SeriesRecommender engine
+│
+├── tests/                          # Automated Unit Test Suite
+│   ├── __init__.py
+│   └── test_recommender.py         # 10 comprehensive unit tests
+│
+├── app.py                          # Streamlit futuristic 3D web application
+├── cli.py                          # Command-line interface for terminal queries
+└── YbiFoundation.ipynb             # Bug-fixed, step-by-step Jupyter Notebook
 ```
 
 ---
 
-## Installation
+## 🚀 Quickstart Guide
 
-### Clone Repository
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/Mayuresh-01-MB/YbiProject.git
-```
-
-### Navigate to Project Folder
-
-```bash
 cd YbiProject
 ```
 
-### Install Dependencies
+### 2. Install Dependencies
+
+Ensure Python 3.9+ is installed, then install requirements:
 
 ```bash
-pip install pandas numpy matplotlib seaborn scikit-learn
+pip install -r requirements.txt
 ```
 
-### Run Notebook
+---
 
-Open:
+### 3. Launch the Web Application
 
-```text
-YbiFoundation.ipynb
+To run the interactive Streamlit dashboard:
+
+```bash
+# Recommended (works regardless of Windows PATH settings):
+python -m streamlit run app.py
+
+# Or directly:
+streamlit run app.py
 ```
 
-using Jupyter Notebook or Google Colab.
+The app will open automatically in your browser at `http://localhost:8501`.
 
 ---
 
-## Results
+### 4. Run via Command Line (CLI)
 
-The machine learning model was trained and evaluated using appropriate performance metrics. The project demonstrates practical implementation of data preprocessing, feature engineering, model building, and evaluation techniques learned during the internship.
+Get top 5 recommendations for a movie:
 
----
+```bash
+python cli.py --movie "Avatar" --top 5
+```
 
-## Skills Demonstrated
+Explore trending/popular movies:
 
-- Data Analysis
-- Data Visualization
-- Machine Learning
-- Feature Engineering
-- Model Evaluation
-- Python Programming
-- Problem Solving
+```bash
+python cli.py --popular --top 5
+```
 
----
+Interactive prompt:
 
-## Internship Details
-
-**Organization:** YBI Foundation
-
-**Domain:** Data Science & Machine Learning
-
-This project was completed as part of the internship program to gain hands-on experience in real-world machine learning applications. 
+```bash
+python cli.py
+```
 
 ---
 
-## Future Improvements
+### 5. Run the Jupyter Notebook
 
-- Improve model accuracy using advanced algorithms.
-- Perform hyperparameter optimization.
-- Deploy the model as a web application.
-- Add automated data pipelines.
+Open and run `YbiFoundation.ipynb` locally or in Google Colab:
+
+```bash
+jupyter notebook YbiFoundation.ipynb
+```
+
+All indexing bugs, missing methods, and redundant logic have been resolved. The notebook runs seamlessly from top to bottom.
+
+---
+
+### 6. Run Automated Tests
+
+Execute the unit test suite to verify data loading, indexing alignment, fuzzy matching, and fallback handling:
+
+```bash
+python -m pytest tests/ -v
+```
+
+All 9 unit tests validate:
+- Accurate indexing alignment (e.g. Avatar matches Aliens, Guardians of the Galaxy, Star Trek).
+- Self-match filtering.
+- Case-insensitivity and typo tolerance.
+- Graceful fallback for non-existent movies.
 
 ---
 
-## Author
+## 📊 Recommendation Example: Querying "Avatar"
 
-### Mayuresh Bhandari
+When querying **"Avatar"**, the corrected recommendation engine identifies:
 
-- GitHub: https://github.com/Mayuresh-01-MB
+| Rank | Recommended Movie | Genre | Director | Similarity |
+| :---: | :--- | :--- | :--- | :---: |
+| **1** | **Aliens** | Horror, Action, Thriller, Sci-Fi | James Cameron | **7.3%** |
+| **2** | **Star Trek Beyond** | Action, Adventure, Sci-Fi | Justin Lin | **7.0%** |
+| **3** | **Moonraker** | Action, Adventure, Thriller, Sci-Fi | Lewis Gilbert | **6.5%** |
+| **4** | **Guardians of the Galaxy** | Action, Sci-Fi, Adventure | James Gunn | **6.4%** |
+| **5** | **Alien** | Horror, Action, Thriller, Sci-Fi | Ridley Scott | **6.2%** |
 
+*(Previous unpatched versions returned unrelated movies like "Freaky Friday" due to a 1-indexed `Movie_ID` vs 0-indexed DataFrame row alignment bug).*
 
 ---
+
+## 🛠️ Technologies Used
+
+- **Language**: Python 3
+- **Data Manipulation**: Pandas, NumPy
+- **Machine Learning & NLP**: Scikit-learn (`TfidfVectorizer`, `cosine_similarity`), SciPy
+- **Text Matching**: Python standard `difflib`
+- **Web Framework**: Streamlit
+- **Testing**: Pytest
+
+---
+
+## 👤 Author & Internship Details
+
+- **Author**: Mayuresh Bhandari
+- **GitHub**: [@Mayuresh-01-MB](https://github.com/Mayuresh-01-MB)
+- **Organization**: YBI Foundation
+- **Domain**: Data Science & Machine Learning
+- **Problem Statement**: PS-5 (Content-Based Recommendation System)
